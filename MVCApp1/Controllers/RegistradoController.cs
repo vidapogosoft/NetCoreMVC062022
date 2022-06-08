@@ -38,7 +38,6 @@ namespace MVCApp1.Controllers
                     ListRegistrados = JsonConvert.DeserializeObject<List<Registrado>>(Response);
                 }
 
-
             }
 
             return View(ListRegistrados);
