@@ -10,6 +10,7 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
 using MVCApp1.Models;
+using System.Text;
 
 namespace MVCApp1.Controllers
 {
@@ -59,11 +60,30 @@ namespace MVCApp1.Controllers
         // POST: RegistradoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Registrado collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                using (var client = new HttpClient())
+                {
+
+                    client.BaseAddress = new Uri(Baseurl);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var json = JsonConvert.SerializeObject(collection);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage Res = client.PostAsync("api/Registrado", content).GetAwaiter().GetResult();
+
+                    if(Res.IsSuccessStatusCode)
+                    {
+                        var RegResponse = Res.Content.ReadAsStringAsync().Result;
+                    }
+
+                }
+
+                return RedirectToAction("Index");
             }
             catch
             {
