@@ -46,9 +46,25 @@ namespace MVCApp1.Controllers
         }
 
         // GET: RegistradoController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int IdRegistrado)
         {
-            return View();
+            var registrado = new Registrado();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+
+                HttpResponseMessage Res = await client.GetAsync("api/Registrado/Datos2/" + IdRegistrado);
+
+                if (Res.IsSuccessStatusCode)
+                {
+                    var Response = Res.Content.ReadAsStringAsync().Result;
+
+                    registrado = JsonConvert.DeserializeObject<Registrado>(Response);
+                }
+            }
+
+             return View(registrado);
         }
 
         // GET: RegistradoController/Create
@@ -92,19 +108,51 @@ namespace MVCApp1.Controllers
         }
 
         // GET: RegistradoController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int IdRegistrado)
         {
-            return View();
+            var registrado = new Registrado();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+
+                HttpResponseMessage Res = await client.GetAsync("api/Registrado/Datos2/" + IdRegistrado);
+
+                if (Res.IsSuccessStatusCode)
+                {
+                    var Response = Res.Content.ReadAsStringAsync().Result;
+
+                    registrado = JsonConvert.DeserializeObject<Registrado>(Response);
+                }
+            }
+
+            return View(registrado);
         }
 
         // POST: RegistradoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Registrado collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(Baseurl);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var json = JsonConvert.SerializeObject(collection);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage Res = client.PutAsync("api/Registrado", content).GetAwaiter().GetResult();
+                    if (Res.IsSuccessStatusCode)
+                    {
+                        var empResponse = Res.Content.ReadAsStringAsync().Result;
+                    }
+                }
+
+                    return RedirectToAction(nameof(Index));
             }
             catch
             {

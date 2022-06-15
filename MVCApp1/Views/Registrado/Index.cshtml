@@ -46,7 +46,8 @@
                 @Html.DisplayFor(modelItem => item.NombresCompletos)
             </td>
             <td>
-
+                @Html.ActionLink("Detalles", "Details", new { item.IdRegistrado }) |
+                @Html.ActionLink("Editar", "Edit", new { item.IdRegistrado })
             </td>
         </tr>
     }
