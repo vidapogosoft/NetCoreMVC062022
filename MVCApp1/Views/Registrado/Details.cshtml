@@ -1,6 +1,5 @@
 ﻿@model MVCApp1.Models.Registrado
 
-
 <h2>Detail</h2>
 
 <div>
@@ -50,6 +49,15 @@
 
     </dl>
 </div>
+
+<div>
+
+
+    @await Html.PartialAsync("~/Views/Direccion/Index.cshtml", Model)
+
+
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.IdRegistrado }) |
     @Html.ActionLink("Back to List", "Index")

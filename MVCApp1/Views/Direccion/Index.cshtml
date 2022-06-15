@@ -1,0 +1,24 @@
+﻿@model MVCApp1.Models.Registrado
+@using MVCApp1.Models;
+@{
+
+
+    var direccion = new Direccion();
+    direccion.IdRegistrado = Model.IdRegistrado;
+    direccion.Nombres = Model.NombresCompletos;
+
+
+}
+
+
+
+<h2>DIRECCIONES DEL REGISTRADO</h2>
+
+<dd>
+    @Html.DisplayFor(model => direccion.IdRegistrado)
+</dd>
+
+
+<dd>
+    @Html.DisplayFor(model => direccion.Nombres)
+</dd>
