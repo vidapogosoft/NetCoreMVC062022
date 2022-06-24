@@ -24,8 +24,9 @@ namespace MVCApp1.Controllers
         }
 
         // GET: DireccionController/Create
-        public ActionResult Create()
+        public ActionResult Create(string Idregistrado)
         {
+            ViewBag.id = Idregistrado;
             return View();
         }
 
