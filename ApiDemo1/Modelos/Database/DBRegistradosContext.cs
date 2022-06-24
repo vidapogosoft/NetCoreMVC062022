@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
+using ApiDemo1.Modelos.DTO;
+
 namespace ApiDemo1.Modelos.Database
 {
     public partial class DBRegistradosContext : DbContext
@@ -19,11 +21,9 @@ namespace ApiDemo1.Modelos.Database
         {
         }
 
+        public virtual DbSet<Direcciones> Direcciones { get; set; }
         public virtual DbSet<Registrados> Registrados { get; set; }
-
-        public virtual DbSet<DTO.DTOResultSet> Resultado { get; set; }
-
-
+        public virtual DbSet<DTOResultSet> Resultado { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -34,6 +34,16 @@ namespace ApiDemo1.Modelos.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Direcciones>(entity =>
+            {
+                entity.HasKey(e => e.IdDirecciones)
+                    .HasName("PK__Direccio__71EDDA8C7A83EE7A");
+
+                entity.Property(e => e.Direccion)
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Registrados>(entity =>
             {
                 entity.HasKey(e => e.IdRegistrado)

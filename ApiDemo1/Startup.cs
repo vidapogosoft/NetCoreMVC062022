@@ -151,6 +151,7 @@ namespace ApiDemo1
             services.AddSingleton<IJwtAuthenticationService>(new JwtAuthenticationService(key));
 
             services.AddSingleton<IRegistrados, ServiceRegistrado>();
+            services.AddSingleton<IDireccion, ServiceDirecciones>();
 
         }
 
