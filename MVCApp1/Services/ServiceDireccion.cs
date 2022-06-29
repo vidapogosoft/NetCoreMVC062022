@@ -21,22 +21,27 @@ namespace MVCApp1.Services
             _Client = new HttpClient();
         }
 
-        public  List<Direcciones> GetDireccionesByIdRegistrado(string IdRegistrado)
+        public async Task<List<Direcciones>> GetDireccionesByIdRegistrado(string IdRegistrado)
         {
             var uriget = new Uri("http://localhost:3849/api/Registrado/" + IdRegistrado);
+
+
+            direccion = new List<Direcciones>();
 
 
             var responseget = _Client.GetAsync(uriget).Result;
 
             if (responseget.IsSuccessStatusCode)
             {
-                var contentget = responseget.Content.ReadAsStringAsync();
+                var contentget = await responseget.Content.ReadAsStringAsync();
 
                 direccion = JsonConvert.DeserializeObject<List<Direcciones>>(contentget);
 
             }
 
             return direccion;
+
+
         }
 
     }

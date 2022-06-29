@@ -3,7 +3,9 @@
 @using MVCApp1.Services;
 @{
 
-    List<Direcciones> direccion;
+
+    List<Direcciones> direccion = new List<Direcciones>();
+
     ServiceDireccion DAdireccion = new ServiceDireccion();
 
 
@@ -15,7 +17,7 @@
     //direccion.IdRegistrado = Model.IdRegistrado;
     //direccion.Nombres = Model.NombresCompletos;
 
-    direccion = DAdireccion.GetDireccionesByIdRegistrado(Model.IdRegistrado.ToString());
+    direccion = await DAdireccion.GetDireccionesByIdRegistrado(Model.IdRegistrado.ToString());
 
 
 }
