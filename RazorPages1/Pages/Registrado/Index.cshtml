@@ -1,0 +1,20 @@
+﻿@page
+@model RazorPages1.Pages.Registrado.IndexModel
+@{
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Registrados</h1>
+    <p>Registrados en el sistema</p>
+</div>
+
+<div class="text-center mt-4 mb-4">
+    <a asp-page="/Registrado/Create" class="btn btn-primary text-light btn-lg">Crear nuevo registro</a>
+</div>
+
+
+@if (Model.ListRegistrados.Count() != 0)
+{
+
+}
