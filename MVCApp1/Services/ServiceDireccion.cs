@@ -23,7 +23,7 @@ namespace MVCApp1.Services
 
         public async Task<List<Direcciones>> GetDireccionesByIdRegistrado(string IdRegistrado)
         {
-            var uriget = new Uri("http://localhost:3849/api/Registrado/" + IdRegistrado);
+            var uriget = new Uri("http://localhost:3849/api/Direccion/Id/" + IdRegistrado);
 
 
             direccion = new List<Direcciones>();
@@ -40,7 +40,6 @@ namespace MVCApp1.Services
             }
 
             return direccion;
-
 
         }
 

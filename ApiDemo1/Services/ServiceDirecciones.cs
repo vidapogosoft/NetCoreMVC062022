@@ -17,5 +17,10 @@ namespace ApiDemo1.Services
         {
             data.InsertDireccion(New);
         }
+
+        public IEnumerable<Direcciones> GetDireccionesByIdRegistrado(string IdRegistrado)
+        {
+            return data.GetDireccionesByIdRegistrado(IdRegistrado);
+        }
     }
 }

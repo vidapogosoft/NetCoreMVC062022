@@ -24,6 +24,14 @@ namespace ApiDemo1.Controllers
             _dir = ireg;
         }
 
+        [HttpGet("Id/{IdRegistrado}")]
+        public IActionResult GetDireccionesByIdRegistrado(string IdRegistrado)
+        {
+
+            return Ok(_dir.GetDireccionesByIdRegistrado(IdRegistrado));
+
+        }
+
         [HttpPost]
         public IActionResult Create([FromBody] Direcciones NewItem)
         {

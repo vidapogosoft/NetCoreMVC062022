@@ -10,5 +10,7 @@ namespace ApiDemo1.Interfaces
     public interface IDireccion
     {
         void InsertDireccion(Direcciones New);
+
+        IEnumerable<Direcciones> GetDireccionesByIdRegistrado(string IdRegistrado);
     }
 }

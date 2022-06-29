@@ -18,5 +18,16 @@ namespace ApiDemo1.DataRepository
                 context.SaveChanges();
             }
         }
+
+        public List<Direcciones> GetDireccionesByIdRegistrado(string IdRegistrado)
+        {
+
+            using (var context = new DBRegistradosContext())
+            {
+                return context.Direcciones.Where(a => a.IdRegistrado == int.Parse(IdRegistrado))
+                    .ToList();
+            }
+
+        }
     }
 }
