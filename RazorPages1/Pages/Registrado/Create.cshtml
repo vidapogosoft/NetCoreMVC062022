@@ -2,3 +2,40 @@
 @model RazorPages1.Pages.Registrado.CreateModel
 @{
 }
+
+<h1>Creacion de Registros</h1>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <form method="post">
+
+            <div class="form-group">
+                <label>Identificacion:</label>
+                <input  asp-for="register.Identificacion" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Nombres:</label>
+                <input asp-for="register.Nombres" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Apellidos:</label>
+                <input asp-for="register.Apellidos" class="form-control" />
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                <input type ="submit" value="Registrar" class="btn-lg btn-warning"/>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
