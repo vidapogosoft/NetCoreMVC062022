@@ -13,7 +13,7 @@ namespace Identity.Persistence.Database.Configuration
             entityBuilder.Property(x => x.FirstName).IsRequired().HasMaxLength(100);
             entityBuilder.Property(x => x.LastName).IsRequired().HasMaxLength(100);
 
-            entityBuilder.HasMany(e=> e.UserRoles).WithOne(e=> e.User).HasForeignkey(e=> e.UserId).IsRequired();
+            entityBuilder.HasMany(e=> e.UserRoles).WithOne(e=> e.User).HasForeignKey(e=> e.UserId).IsRequired();
 
         }
 
