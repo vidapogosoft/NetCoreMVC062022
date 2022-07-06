@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Model", "..\Identi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Persistence.Database", "..\Identity.Persistence.Database\Identity.Persistence.Database.csproj", "{EE120619-1264-4662-B10C-966780B29C89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Services", "..\Identity.Services\Identity.Services.csproj", "{F78275B4-4DD9-4FF3-93E1-6E7D8A8BD6E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EE120619-1264-4662-B10C-966780B29C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE120619-1264-4662-B10C-966780B29C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE120619-1264-4662-B10C-966780B29C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78275B4-4DD9-4FF3-93E1-6E7D8A8BD6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78275B4-4DD9-4FF3-93E1-6E7D8A8BD6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78275B4-4DD9-4FF3-93E1-6E7D8A8BD6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78275B4-4DD9-4FF3-93E1-6E7D8A8BD6E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
