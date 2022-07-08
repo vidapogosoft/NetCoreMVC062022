@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using Identity.Persistence.Database;
-using Identity.Services.Get;
+using Identity.Model;
 
 using MediatR;
 using System.Reflection;
@@ -49,6 +49,12 @@ namespace Identity.Api
                 );
 
 
+            // Identity
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+
             // Identity configuration
             services.Configure<IdentityOptions>(options =>
             {
@@ -64,7 +70,6 @@ namespace Identity.Api
             //Event handlers
             services.AddMediatR(Assembly.Load("Identity.Services"));
 
-            services.AddTransient<IUserQueryService, UserGet>();
 
             services.AddControllers();
         }

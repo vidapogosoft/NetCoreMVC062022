@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Identity.Model\Identity.Model.csproj" />
     <ProjectReference Include="..\Identity.Persistence.Database\Identity.Persistence.Database.csproj" />
   </ItemGroup>
 

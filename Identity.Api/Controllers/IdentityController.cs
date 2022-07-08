@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 using Identity.Services;
 using Identity.Services.Post;
-using Identity.Services.Get;
-
 using MediatR;
 
 
@@ -19,16 +17,13 @@ namespace Identity.Api.Controllers
     public class IdentityController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IUserQueryService _userQueryService;
 
         public IdentityController(
             
-            IMediator mediator,
-             IUserQueryService userQueryService
+            IMediator mediator
 
             )
         {
-            _userQueryService = userQueryService;
             _mediator = mediator;
             
         }
