@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -13,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Identity.Persistence.Database\Identity.Persistence.Database.csproj" />
+    <ProjectReference Include="..\Identity.Services\Identity.Services.csproj" />
   </ItemGroup>
 
 </Project>
