@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using MediatR;
+using Identity.Services.Response;
+
+using System.ComponentModel.DataAnnotations;
 
 namespace Identity.Services.Post
 {
-    class UserLoginPost
+    public class UserLoginPost : IRequest<IdentityAccess>
     {
+        [Required, EmailAddress]
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
+
     }
 }

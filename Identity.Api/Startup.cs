@@ -14,9 +14,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 using Identity.Persistence.Database;
+using Identity.Services.Get;
 
 using MediatR;
 using System.Reflection;
+
 
 namespace Identity.Api
 {
@@ -32,6 +34,8 @@ namespace Identity.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // HttpContextAccessor
+            services.AddHttpContextAccessor();
 
             //DbContext
             services.AddDbContext<ApplicationDbContext>(
@@ -44,8 +48,6 @@ namespace Identity.Api
 
                 );
 
-            //Event handlers
-            services.AddMediatR(Assembly.Load("Identity.Services"));
 
             // Identity configuration
             services.Configure<IdentityOptions>(options =>
@@ -57,6 +59,12 @@ namespace Identity.Api
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
             });
+
+
+            //Event handlers
+            services.AddMediatR(Assembly.Load("Identity.Services"));
+
+            services.AddTransient<IUserQueryService, UserGet>();
 
             services.AddControllers();
         }

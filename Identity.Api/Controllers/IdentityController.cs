@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Identity.Services;
 using Identity.Services.Post;
+using Identity.Services.Get;
 
 using MediatR;
 
@@ -17,15 +19,16 @@ namespace Identity.Api.Controllers
     public class IdentityController : ControllerBase
     {
         private readonly IMediator _mediator;
-
+        private readonly IUserQueryService _userQueryService;
 
         public IdentityController(
             
-            IMediator mediator
+            IMediator mediator,
+             IUserQueryService userQueryService
 
             )
         {
-
+            _userQueryService = userQueryService;
             _mediator = mediator;
             
         }
@@ -47,6 +50,25 @@ namespace Identity.Api.Controllers
             return Ok();
         }
 
+        [HttpPost("authentication")]
+        public async Task<IActionResult> Authenticaction(UserLoginPost com)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _mediator.Send(com);
+
+                if (!result.Succeeded)
+                {
+                    return BadRequest("Acceso denegado");
+                }
+
+                return Ok(result);
+
+            }
+
+            return BadRequest();
+
+        }
 
     }
 }
