@@ -4,7 +4,479 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
+    <div class="bg-overlay"></div>
+    <div class="auth-page-content overflow-hidden pt-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card overflow-hidden m-0">
+
+                        <div class="row justify-content-center g-0">
+                            <div class="col-lg-4">
+                                <div class="p-lg-5 p-4 auth-one-bg h-100">
+                                    <div class="bg-overlay"></div>
+                                    <div class="position-relative h-100 d-flex flex-column">
+                                        <div class="mb-4">
+                                            <a href="#" class="d-block">
+                                                <img src="images/logo-light.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="mt-auto">
+                                            <div id="qoutescarouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="0" class="active"
+                                                            aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="1"
+                                                            aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="2"
+                                                            aria-label="Slide 3"></button>
+                                                </div>
+                                                <div class="carousel-inner text-center text-white pb-5">
+                                                    <div class="carousel-item active">
+                                                        <p class="fs-15 fst-italic">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <p class="fs-15 fst-italic">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <p class="fs-15 fst-italic">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end carousel -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="p-lg-5 p-4">
+
+                                    <div>
+                                        <h5 class="text-primary">Completa tu registro</h5>
+                                        <p class="text-muted">Solo tomará unos minutos</p>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-3">
+                                            <div class="nav nav-pills flex-column nav-pills-tab custom-verti-nav-pills text-center" role="tablist" aria-orientation="vertical">
+                                                <a class="nav-link active show" id="datosPersonales-tab" data-bs-toggle="pill" href="#datosPersonales" role="tab" aria-controls="datosPersonales"
+                                                   aria-selected="true">
+                                                    <i class="ri-user-2-line d-block fs-20 mb-1"></i>
+                                                    Datos Personales
+                                                </a>
+                                                <a class="nav-link" id="datosContacto-tab" data-bs-toggle="pill" href="#datosContacto" role="tab" aria-controls="datosContacto"
+                                                   aria-selected="false">
+                                                    <i class="ri-contacts-book-line d-block fs-20 mb-1"></i>
+                                                    Datos de Contacto
+                                                </a>
+                                                <a class="nav-link" id="educacionUsuario-tab" data-bs-toggle="pill" href="#educacionUsuario" role="tab" aria-controls="educacionUsuario"
+                                                   aria-selected="false">
+                                                    <i class="bx bxs-graduation d-block fs-24 mb-1"></i>
+                                                    Educación
+                                                </a>
+                                                <a class="nav-link" id="experienciaLaboral-tab" data-bs-toggle="pill" href="#experienciaLaboral" role="tab" aria-controls="experienciaLaboral"
+                                                   aria-selected="false">
+                                                    <i class="ri-briefcase-4-line d-block fs-20 mb-1"></i>
+                                                    Experiencia Laboral
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- end col-->
+
+                                        <div class="col-sm-9">
+                                            <div class="tab-content mt-3 mt-lg-0">
+
+                                                <div class="tab-pane fade active show" id="datosPersonales" role="tabpanel" aria-labelledby="datosPersonales-tab">
+                                                    <form class="needs-validation" novalidate action="#">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="nombreUsuario" class="form-label">Nombres</label>
+                                                                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Datos previos" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="apellidoUsuario" class="form-label">Apellidos</label>
+                                                                    <input type="text" class="form-control" id="apellidoUsuario" placeholder="Datos previos" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="tipoDocumentoUsuario" class="form-label">Tipo de Documento</label>
+                                                                    <input type="text" class="form-control" id="tipoDocumentosuario" placeholder="Tipo de Documento" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu tipo de documento.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="documentoUsuario" class="form-label">Documento</label>
+                                                                    <input type="text" class="form-control" id="documentoUsuario" placeholder="Documento" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu documento.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <label for="correoUsuario" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="useremail" placeholder="Datos previos" readonly>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="nacimientoUsuario" class="form-label">Fecha de nacimiento <span class="text-danger">*</span></label>
+                                                                    <input type="date" class="form-control" id="nacimientoUsuario" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu fecha de nacimiento.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="generoUsuario" class="form-label">Género <span class="text-danger">*</span></label>
+                                                                    <select class="form-select" id="generoUsuario" required>
+                                                                        <option selected disabled value="">Seleccionar género</option>
+                                                                        <option value="1">Femenino</option>
+                                                                        <option value="2">Masculino</option>
+                                                                        <option value="3">LGBT+</option>
+                                                                    </select>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu género.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-3">
+                                                                    <label for="nacionalidadUsuario" class="form-label">Nacionalidad <span class="text-danger">*</span></label>
+                                                                    <select class="form-select" id="nacionalidadUsuario" required>
+                                                                        <option selected disabled value="">Seleccionar país</option>
+                                                                        <option value="1">Argentina</option>
+                                                                        <option value="2">Bolivia</option>
+                                                                        <option value="3">Chile</option>
+                                                                        <option value="4">Colombia</option>
+                                                                        <option value="5">Ecuador</option>
+                                                                        <option value="6">México</option>
+                                                                        <option value="7">Paraguay</option>
+                                                                        <option value="8">Panamá</option>
+                                                                        <option value="9">Perú</option>
+                                                                        <option value="10">Uruguay</option>
+                                                                        <option value="11">Venezuela</option>
+                                                                    </select>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu país de nacimiento.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-3">
+                                                                    <label for="estadoCivilUsuario" class="form-label">Estado civil <span class="text-danger">*</span></label>
+                                                                    <select class="form-select" id="estadoCivilUsuario" required>
+                                                                        <option selected disabled value="">Seleccionar estado civil</option>
+                                                                        <option value="1">Soltero</option>
+                                                                        <option value="2">Casado</option>
+                                                                        <option value="3">Divorciado</option>
+                                                                        <option value="3">Viudo</option>
+                                                                    </select>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu estado civil.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-3">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="chkLicenciaConducir">
+                                                                    <label class="form-check-label" for="chkLicenciaConducir">
+                                                                        Poseo licencia de conducir.
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-3">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="chkMovilidad">
+                                                                    <label class="form-check-label" for="chkMovilidad">
+                                                                        Poseo movilidad propia.
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <input class="form-check-input" type="checkbox" value="" id="chkPoseoDiscapacidad">
+                                                            <label class="form-check-label" for="chkPoseoDiscapacidad">
+                                                                Poseo algún tipo de discapacidad.
+                                                            </label>
+                                                        </div>
+                                                        <span class="text-danger">* </span><span class="text-muted">Campos obligatorios</span>
+                                                        <div class="mt-3">
+                                                            <button class="btn btn-success w-100" type="submit">Siguiente</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--end tab-pane-->
+
+                                                <div class="tab-pane fade" id="datosContacto" role="tabpanel" aria-labelledby="datosContacto-tab">
+                                                    <form class="needs-validation" novalidate action="#">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="telefonoUsuario" class="form-label">Teléfono celular <span class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="telefonoUsuario" placeholder="Ingresa tu teléfono celular" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tus teléfono celular.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="telefono2Usuario" class="form-label">Otro teléfono</label>
+                                                                    <input type="text" class="form-control" id="telefono2Usuario" placeholder="Ingresa un teléfono secundario">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <label for="correoUsuario" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="correoUsuario" placeholder="Datos previos" readonly>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <label for="correo2Usuario" class="form-label">Email Secundario</label>
+                                                            <input type="email" class="form-control" id="correo2Usuario" placeholder="Ingresa una dirección de correo secundaria">
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="paisUsuario" class="form-label">País de residencia <span class="text-danger">*</span></label>
+                                                                    <select class="form-select" id="paisUsuario" required>
+                                                                        <option selected disabled value="">Seleccionar país</option>
+                                                                        <option value="1">Argentina</option>
+                                                                        <option value="2">Bolivia</option>
+                                                                        <option value="3">Chile</option>
+                                                                        <option value="4">Colombia</option>
+                                                                        <option value="5">Ecuador</option>
+                                                                        <option value="6">México</option>
+                                                                        <option value="7">Paraguay</option>
+                                                                        <option value="8">Panamá</option>
+                                                                        <option value="9">Perú</option>
+                                                                        <option value="10">Uruguay</option>
+                                                                        <option value="11">Venezuela</option>
+                                                                    </select>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu país de residencia.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="provinciaUsuario" class="form-label">Provincia <span class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="provinciaUsuario" placeholder="Ingresa tu provincia" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu provincia.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="mb-2">
+                                                                    <label for="cantonUsuario" class="form-label">Cantón <span class="text-danger">*</span></label>
+                                                                    <input type="text" class="form-control" id="cantonUsuario" placeholder="Ingresa tu canton" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tu cantón.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <label for="direccionUsuario" class="form-label">Dirección <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control" id="direccionUsuario" placeholder="Ingresa tu dirección" required>
+                                                            <div class="invalid-feedback">
+                                                                Por favor ingresa tus dirección.
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <label for="direccionUsuario" class="form-label">Redes Sociales</label>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-icon mb-2">
+                                                                    <input type="text" class="form-control form-control-icon" id="facebookUsuario" placeholder="Ingresa tu URL de Facebook">
+                                                                    <i class="ri-facebook-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-icon mb-2">
+                                                                    <input type="text" class="form-control form-control-icon" id="twitterUsuario" placeholder="Ingresa tu URL de Twitter">
+                                                                    <i class="ri-twitter-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-icon mb-3">
+                                                                    <input type="text" class="form-control form-control-icon" id="instagramUsuario" placeholder="Ingresa tu URL de Instagram">
+                                                                    <i class="ri-instagram-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-icon mb-3">
+                                                                    <input type="text" class="form-control form-control-icon" id="linkedinUsuario" placeholder="Ingresa tu URL de LinkedIn">
+                                                                    <i class="ri-linkedin-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="text-danger">* </span><span class="text-muted">Campos obligatorios</span>
+                                                        <div class="mt-3">
+                                                            <button class="btn btn-success w-100" type="submit">Siguiente</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--end tab-pane-->
+                                                <div class="tab-pane fade" id="educacionUsuario" role="tabpanel" aria-labelledby="educacionUsuario-tab">
+                                                    <div class="mt-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h5>Formación académica</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#mdFormacionAcademica"><i class="ri-add-circle-fill label-icon"></i>Agregar</button>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="mt-1">
+                                                        <div class="d-flex align-items-center">
+                                                            <!-- Item Formación académica-->
+                                                            <div class="flex-grow-1">
+                                                                <div>
+                                                                    <h5 class="text-primary">Licenciado en Administración de Empresas</h5>
+                                                                    <h5>Universidad de Guayaquil</h5>
+                                                                    <h6 class="text-muted">Universitario - Graduado</h6>
+                                                                    <p class="text-muted">Feb 2010 - Sep 2015, Ecuador</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-pencil-fill"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-delete-bin-fill"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h5>Idiomas</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#mdIdioma"><i class="ri-add-circle-fill label-icon"></i>Agregar</button>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="mt-1">
+                                                        <div class="d-flex align-items-center">
+                                                            <!-- Item Formación académica-->
+                                                            <div class="flex-grow-1">
+                                                                <div>
+                                                                    <h5 class="text-primary">Español</h5>
+                                                                    <p class="text-muted mb-0"><b>Escrito:</b> Nativo</p>
+                                                                    <p class="text-muted mb-0"><b>Hablado:</b> Nativo</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-pencil-fill"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-delete-bin-fill"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <button class="btn btn-success w-100" type="submit">Siguiente</button>
+                                                    </div>
+                                                </div>
+                                                <!--end tab-pane-->
+                                                <div class="tab-pane fade" id="experienciaLaboral" role="tabpanel" aria-labelledby="experienciaLaboral-tab">
+                                                    <div class="mt-3">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h5>Experiencia laboral</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#mdExperienciaLaboral"><i class="ri-add-circle-fill label-icon"></i>Agregar</button>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="mt-1">
+                                                        <div class="d-flex align-items-center">
+                                                            <!-- Item Experiencia Laboral-->
+                                                            <div class="flex-grow-1">
+                                                                <div>
+                                                                    <h5 class="text-primary">Coordinador de Ventas</h5>
+                                                                    <h5>Inmobiliaria XYZ</h5>
+                                                                    <h6 class="text-muted">Jun 2018 - Actualidad</h6>
+                                                                    <p class="text-muted">Promover las ventas de la urbanización ABC, coordinar a la fuerza de ventas.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-pencil-fill"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-delete-bin-fill"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <!-- Item Experiencia Laboral-->
+                                                            <div class="flex-grow-1">
+                                                                <div>
+                                                                    <h5 class="text-primary">Vendedor</h5>
+                                                                    <h5>Inmobiliaria XYZ</h5>
+                                                                    <h6 class="text-muted">Enero 2015 - Marzo 2018</h6>
+                                                                    <p class="text-muted">Promover las ventas de la urbanización ABC.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-pencil-fill"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline-primary shadow-none">
+                                                                    <i class="ri-delete-bin-fill"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" mt-3">
+                                                        <h5>Hoja de Vida</h5>
+                                                        <hr class="mt-1">
+                                                        <label for="formFile" class="form-label">Subir archivo en .pdf</label>
+                                                        <input class="form-control" type="file" id="formFile">
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <button class="btn btn-success w-100" type="submit">Finalizar</button>
+                                                    </div>
+                                                </div>
+                                                <!--end tab-pane-->
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
