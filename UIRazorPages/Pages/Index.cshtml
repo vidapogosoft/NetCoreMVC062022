@@ -89,18 +89,24 @@
                                             <div class="tab-content mt-3 mt-lg-0">
 
                                                 <div class="tab-pane fade active show" id="datosPersonales" role="tabpanel" aria-labelledby="datosPersonales-tab">
-                                                    <form class="needs-validation" novalidate action="#">
+                                                    <form method="post" class="needs-validation">
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="nombreUsuario" class="form-label">Nombres</label>
-                                                                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Datos previos" readonly>
+                                                                    <input asp-for="ModelDatosPersonales.Nombres"  type="text" class="form-control" id="nombreUsuario" placeholder="Datos de nombres" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tus nombre.
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="apellidoUsuario" class="form-label">Apellidos</label>
-                                                                    <input type="text" class="form-control" id="apellidoUsuario" placeholder="Datos previos" readonly>
+                                                                    <input asp-for="ModelDatosPersonales.Apellidos" type="text" class="form-control" id="apellidoUsuario" placeholder="Datos previos" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Por favor ingresa tus apellidos.
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -108,7 +114,7 @@
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="tipoDocumentoUsuario" class="form-label">Tipo de Documento</label>
-                                                                    <input type="text" class="form-control" id="tipoDocumentosuario" placeholder="Tipo de Documento" required>
+                                                                    <input asp-for="ModelDatosPersonales.TipoDocumento" type="text" class="form-control" id="tipoDocumentosuario" placeholder="Tipo de Documento" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tu tipo de documento.
                                                                     </div>
@@ -117,7 +123,7 @@
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="documentoUsuario" class="form-label">Documento</label>
-                                                                    <input type="text" class="form-control" id="documentoUsuario" placeholder="Documento" required>
+                                                                    <input asp-for="ModelDatosPersonales.Documento" type="text" class="form-control" id="documentoUsuario" placeholder="Documento" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tu documento.
                                                                     </div>
@@ -126,13 +132,13 @@
                                                         </div>
                                                         <div class="mb-2">
                                                             <label for="correoUsuario" class="form-label">Email</label>
-                                                            <input type="email" class="form-control" id="useremail" placeholder="Datos previos" readonly>
+                                                            <input asp-for="ModelDatosPersonales.Email" type="email" class="form-control" id="useremail" placeholder="Datos previos">
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="nacimientoUsuario" class="form-label">Fecha de nacimiento <span class="text-danger">*</span></label>
-                                                                    <input type="date" class="form-control" id="nacimientoUsuario" required>
+                                                                    <input asp-for="ModelDatosPersonales.FechaNacimiento" type="date" class="form-control" id="nacimientoUsuario" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tu fecha de nacimiento.
                                                                     </div>
@@ -195,7 +201,7 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="mb-3">
-                                                                    <input class="form-check-input" type="checkbox" value="" id="chkLicenciaConducir">
+                                                                    <input asp-for="ModelDatosPersonales.LicenciaConducir" class="form-check-input" type="checkbox" value="" id="chkLicenciaConducir">
                                                                     <label class="form-check-label" for="chkLicenciaConducir">
                                                                         Poseo licencia de conducir.
                                                                     </label>
@@ -203,7 +209,7 @@
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="mb-3">
-                                                                    <input class="form-check-input" type="checkbox" value="" id="chkMovilidad">
+                                                                    <input asp-for="ModelDatosPersonales.MovilidadPropia" class="form-check-input" type="checkbox" value="" id="chkMovilidad">
                                                                     <label class="form-check-label" for="chkMovilidad">
                                                                         Poseo movilidad propia.
                                                                     </label>
@@ -211,7 +217,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <input class="form-check-input" type="checkbox" value="" id="chkPoseoDiscapacidad">
+                                                            <input asp-for="ModelDatosPersonales.Discapacidad" class="form-check-input" type="checkbox" value="" id="chkPoseoDiscapacidad">
                                                             <label class="form-check-label" for="chkPoseoDiscapacidad">
                                                                 Poseo algún tipo de discapacidad.
                                                             </label>
@@ -225,12 +231,12 @@
                                                 <!--end tab-pane-->
 
                                                 <div class="tab-pane fade" id="datosContacto" role="tabpanel" aria-labelledby="datosContacto-tab">
-                                                    <form class="needs-validation" novalidate action="#">
+                                                    <form method="post" class="needs-validation">
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="telefonoUsuario" class="form-label">Teléfono celular <span class="text-danger">*</span></label>
-                                                                    <input type="text" class="form-control" id="telefonoUsuario" placeholder="Ingresa tu teléfono celular" required>
+                                                                    <input asp-for="ModelDatosContacto.Celular" type="text" class="form-control" id="telefonoUsuario" placeholder="Ingresa tu teléfono celular" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tus teléfono celular.
                                                                     </div>
@@ -239,17 +245,13 @@
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="telefono2Usuario" class="form-label">Otro teléfono</label>
-                                                                    <input type="text" class="form-control" id="telefono2Usuario" placeholder="Ingresa un teléfono secundario">
+                                                                    <input asp-for="ModelDatosContacto.OtroTelefono" type="text" class="form-control" id="telefono2Usuario" placeholder="Ingresa un teléfono secundario">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="mb-2">
-                                                            <label for="correoUsuario" class="form-label">Email</label>
-                                                            <input type="email" class="form-control" id="correoUsuario" placeholder="Datos previos" readonly>
-                                                        </div>
-                                                        <div class="mb-2">
                                                             <label for="correo2Usuario" class="form-label">Email Secundario</label>
-                                                            <input type="email" class="form-control" id="correo2Usuario" placeholder="Ingresa una dirección de correo secundaria">
+                                                            <input asp-for="ModelDatosContacto.EmailSecundario" type="email" class="form-control" id="correo2Usuario" placeholder="Ingresa una dirección de correo secundaria">
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-6">
@@ -277,7 +279,7 @@
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="provinciaUsuario" class="form-label">Provincia <span class="text-danger">*</span></label>
-                                                                    <input type="text" class="form-control" id="provinciaUsuario" placeholder="Ingresa tu provincia" required>
+                                                                    <input asp-for="ModelDatosContacto.Provincia" type="text" class="form-control" id="provinciaUsuario" placeholder="Ingresa tu provincia" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tu provincia.
                                                                     </div>
@@ -288,7 +290,7 @@
                                                             <div class="col-sm-6">
                                                                 <div class="mb-2">
                                                                     <label for="cantonUsuario" class="form-label">Cantón <span class="text-danger">*</span></label>
-                                                                    <input type="text" class="form-control" id="cantonUsuario" placeholder="Ingresa tu canton" required>
+                                                                    <input asp-for="ModelDatosContacto.Canton" type="text" class="form-control" id="cantonUsuario" placeholder="Ingresa tu canton" required>
                                                                     <div class="invalid-feedback">
                                                                         Por favor ingresa tu cantón.
                                                                     </div>
@@ -297,7 +299,7 @@
                                                         </div>
                                                         <div class="mb-2">
                                                             <label for="direccionUsuario" class="form-label">Dirección <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" id="direccionUsuario" placeholder="Ingresa tu dirección" required>
+                                                            <input asp-for="ModelDatosContacto.Direccion" type="text" class="form-control" id="direccionUsuario" placeholder="Ingresa tu dirección" required>
                                                             <div class="invalid-feedback">
                                                                 Por favor ingresa tus dirección.
                                                             </div>
@@ -306,13 +308,13 @@
                                                             <label for="direccionUsuario" class="form-label">Redes Sociales</label>
                                                             <div class="col-sm-6">
                                                                 <div class="form-icon mb-2">
-                                                                    <input type="text" class="form-control form-control-icon" id="facebookUsuario" placeholder="Ingresa tu URL de Facebook">
+                                                                    <input asp-for="ModelDatosContacto.FB" type="text" class="form-control form-control-icon" id="facebookUsuario" placeholder="Ingresa tu URL de Facebook">
                                                                     <i class="ri-facebook-fill"></i>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-icon mb-2">
-                                                                    <input type="text" class="form-control form-control-icon" id="twitterUsuario" placeholder="Ingresa tu URL de Twitter">
+                                                                    <input asp-for="ModelDatosContacto.TW" type="text" class="form-control form-control-icon" id="twitterUsuario" placeholder="Ingresa tu URL de Twitter">
                                                                     <i class="ri-twitter-fill"></i>
                                                                 </div>
                                                             </div>
@@ -320,13 +322,13 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-icon mb-3">
-                                                                    <input type="text" class="form-control form-control-icon" id="instagramUsuario" placeholder="Ingresa tu URL de Instagram">
+                                                                    <input asp-for="ModelDatosContacto.IN" type="text" class="form-control form-control-icon" id="instagramUsuario" placeholder="Ingresa tu URL de Instagram">
                                                                     <i class="ri-instagram-fill"></i>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <div class="form-icon mb-3">
-                                                                    <input type="text" class="form-control form-control-icon" id="linkedinUsuario" placeholder="Ingresa tu URL de LinkedIn">
+                                                                    <input asp-for="ModelDatosContacto.LK" type="text" class="form-control form-control-icon" id="linkedinUsuario" placeholder="Ingresa tu URL de LinkedIn">
                                                                     <i class="ri-linkedin-fill"></i>
                                                                 </div>
                                                             </div>
