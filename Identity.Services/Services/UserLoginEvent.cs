@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Configuration;
 
 using System.Security.Claims;
 using System.Threading;
@@ -26,14 +26,14 @@ namespace Identity.Services.Services
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationDbContext _context;
-        private readonly IConfiguration _configuration;
+        //private readonly IConfiguration _configuration;
 
 
         public UserLoginEvent(
 
             SignInManager<ApplicationUser> signInManager,
             ApplicationDbContext context,
-            IConfiguration configuration
+            //IConfiguration configuration
 
             )
         {
