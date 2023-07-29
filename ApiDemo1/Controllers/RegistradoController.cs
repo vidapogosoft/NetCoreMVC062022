@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ApiDemo1.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RegistradoController : ControllerBase
